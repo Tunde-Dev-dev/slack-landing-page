@@ -559,7 +559,6 @@
 
 .sign-up-google-email {
     margin-bottom: 0;
-    min-width: max-content;
     max-width: 100%;
     width: 100%;
     overflow: visible;
@@ -568,7 +567,6 @@
 .email-link {
     padding: 19px 40px 20px;
     display: inline-block;
-    white-space: nowrap;
     flex-basis: auto;
     width: auto;
     font-size: .875rem;
@@ -597,7 +595,6 @@
     padding: 19px 18px 20px 36px;
     margin-left: 0.5rem;
     margin-top: -1px;
-    white-space: nowrap;
     flex-basis: auto;
     width: auto;
     appearance: none;
@@ -986,7 +983,6 @@
     background-color: rgb(97 31 105);
     color: rgb(255 255 255);
     fill: rgb(255 255 255);
-    white-space: nowrap;
     flex-basis: auto;
     width: auto;
     font-size: .875rem;
@@ -1015,7 +1011,6 @@
     background-color: rgb(255 255 255);
     color: rgb(97 31 105);
     fill: rgb(255 255 255);
-    white-space: nowrap;
     flex-basis: auto;
     width: auto;
     font-size: .875rem;
@@ -1855,7 +1850,7 @@ sup {
     cursor: pointer;
 }
 
-.arrow-link::after {
+.arrow-link span::after {
     position: absolute;
     content: '';
     display: block;
@@ -2076,7 +2071,8 @@ sup {
     .primary-nav-scroll {
         padding: 0 4vw;
     }
-    
+    /* navbar scroll mobile ends */
+
     .hero-header {
         display: flex;
         flex-wrap: wrap;
@@ -2090,6 +2086,9 @@ sup {
         justify-items: start;
     }
     
+    .first-session-header h1, .first-session .span-yellow-test {
+        font-size: calc(2.65rem + (20 * (100vw - 400px)/ 624));
+    }
     .google-div {
         margin-left: 0;
         width: 100%;
@@ -2109,12 +2108,14 @@ sup {
     .first-session-header h1 {
         font-size: calc(2.75rem + (20 * (100vw - 400px)/ 624));
         text-align: center;
+        font-family: Slack-Larsseit,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
     }
     
     .header-first-paragraph1 {
         font-size: calc(1.125rem + (2 * (100vw - 400px)/ 624));
         text-align: center;
         max-width: 60rem;
+        margin: 0.5rem 0 3.5rem;
     }
     
     .header-second-paragraph {
@@ -2162,6 +2163,8 @@ sup {
         align-items: center!important;
         margin: 0 auto;
         display: grid;
+        padding: 0 4vw;
+        padding-left: 0;
         grid-template-columns: 100%;
     }
 
@@ -2187,10 +2190,11 @@ sup {
     margin-bottom: 1rem;
     }
 
-    /* .choose__flexibility {
+    .choose__flexibility {
         margin: 2rem auto 0;
-        margin-left: 1rem;
-    } */
+        margin-right: 1rem;
+        max-width: 30rem;
+    } 
 
     .choose__flexibility h2 {
         margin-bottom: 1rem;
@@ -2241,6 +2245,8 @@ sup {
         margin: 0 auto;
         justify-items: right;
         display: grid;
+        padding: 0 4vw;
+        padding-right: 0;
         grid-template-columns: 100%;
     }
 
@@ -2341,6 +2347,9 @@ sup {
         font-style: italic;
     }
     
+    .eighth-session-header {
+        padding: 0 4vw;
+    }
     .eighth-session-header h2 {
         font-family: Slack-Larsseit,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
         font-weight: 700;
@@ -2374,7 +2383,6 @@ sup {
         margin: 1rem auto 0;
     }
 
-
     /* section nine */
     .session-nine h3 {
         line-height: 1.1875;
@@ -2384,17 +2392,68 @@ sup {
         font-family: Slack-Larsseit,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
         font-weight: 700;
         font-size: calc(2rem + (18 * (100vw - 400px)/ 624));
-    }    
+    }
+    
+    .arrow-link span::after {
+        display: none;
+    }
 }
 
 
 @media screen and (max-width:479px) {
+    .header-first-paragraph1 {
+        font-size: calc(1.125rem + (2 * (100vw - 400px)/ 624));
+        text-align: center;
+        max-width: 60rem;
+        margin: 0.5rem 0 3.5rem;
+    }
+
+    .users-list {
+        margin: 0;
+    }
+
+    .two-boxes a {
+        margin: 0;
+        font-size: calc(.875rem + (0 * (100vw - 400px)/ 624));
+        word-break: normal;
+    }
+
+    .two-boxes .enterprise {
+        margin-bottom: .5rem;
+    }
+
     .footer-wrapper, .lower-footer, .lower-footer1 {
         flex-direction: column;
     }
 
     .download-link {
         margin: 0;
+        padding-top: .6rem;
+    }
+    
+    .bring_your_team a::after,.choose__flexibility a::after, .move__faster__with__tools a::after {
+        display: none;
+    }
+
+    .choose__flexibility p {
+        font-size: calc(1.125rem + (0 * (100vw - 400px)/ 624));
+        margin-bottom: 1rem!important;
+        font-family: Slack-Circular-Pro,"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
+        font-weight: 400;
+        line-height: 1.4444;
+        letter-spacing: normal;
+    }
+
+    .hide-on-tablet-and-desktop {
+        justify-self: end!important;
+    }
+
+    .mobile__video__1 {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    display: inline-block;
+    vertical-align: baseline;
     }
 
     .lower-footer {
@@ -2404,4 +2463,83 @@ sup {
     .footer-container {
         padding: 0 4vw;
     }
+
+    .download-link, .lower-footer1 {
+        width: -webkit-fill-available;
+    }
+
+    .lower-footer1-link {
+        justify-content: flex-start;
+        font-size: calc(.875rem + (0 * (100vw - 400px)/ 624));
+    }
+
+    .lower-footer1-list {
+        padding: 1rem 0;
+    }
+
+    .lower-footer3 {
+        width: -webkit-fill-available;
+    }
+
+    .lower-footer3 li:nth-child(1) {
+        margin: 0;
+    }
+
+    .lower-footer3 li {
+        padding: 1rem 0;
+    }
+
+    .lower-footer1-link span {
+        font-size: calc(.875rem + (0 * (100vw - 400px)/ 624));
+    }
+
+    .change-region {
+        padding-bottom: 1.2rem;
+    }
+
+    .footer-info-links {
+        flex-direction: column;
+    }
+
+    .ul-lists {
+        display: none;
+    }
+    
+    .ul-header {
+        height: 40px;
+        position: relative;
+        align-items: center;
+        display: flex;
+    }
+
+    .ul-header::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 28%;
+        right: 0.25rem;
+        background-image: url('./SVGs/icon_chevron_big_black.svg');
+        width: 1em;
+        height: 1em;
+        background-size: 1em 1em;
+        background-repeat: no-repeat;
+        background-position-y: center;
+        transition: .1s cubic-bezier(.165,.84,.44,1);
+    }
+
+    .footer-info-links {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
+    .ul-header1:hover .ul-list-hover1 {
+        display: block;
+    }
+
+    .footer-wrapper {
+        padding-bottom: 0;
+        padding-top: 3.5rem;
+    }
 }
+
